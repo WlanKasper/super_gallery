@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/login_registration.css">
+    <title>Registration</title>
+</head>
+
+<body>
+    <header>
+        <div id="wrapper_header">
+            <div id="header_logo">
+            </div>
+        </div>
+    </header>
+    <main>
+        <form action="../php/registration.php" onsubmit="return validation()" name="form_registration" method="post">
+            <input type="text" name="_firstname" id="_firstname" placeholder="firstname">
+            <input type="text" name="_lastname" id="_lastname" placeholder="lastname">
+            <input type="tel" name="_phone" id="_phone" placeholder="phone number">
+            <button type="submit">
+                <h4 class="color_dark">
+                    Sign up
+                </h4>
+            </button>
+        </form>
+    </main>
+    <footer>
+        <h3 class="color_main">
+            or <a href="../index.html">Login</a> 
+        </h3>
+    </footer>
+</body>
+<script src="../js/validation_registration.js"></script>
+
+</html>

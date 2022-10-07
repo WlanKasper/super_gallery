@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login_registration.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <main>
+        <form action="./php/authentication.php" onsubmit="return validation()" name="form_login" method="post">
+            <input type="text" name="_firstname" id="_firstname" placeholder="FIRSTNAME">
+            <input type="text" name="_lastname" id="_lastname" placeholder="LASTNAME">
+            <input type="tel" name="_phone" id="_phone" placeholder="PHONE NUMBER">
+            <button type="submit">
+                <h4>
+                    ENTER
+                </h4>
+            </button>
+            <h5 id="registration_link">
+                OR <a href="./pages/registration.html">REGISTRATION</a> 
+            </h5>
+        </form>
+    </main>
+</body>
+<script src="./js/validation_login.js"></script>
+
+</html>
