@@ -1,5 +1,12 @@
 let arr_pipes = new Array();
 
+let last_pipe = {
+    width: null,
+    height: null,
+    left: null,
+    top: null
+}
+
 function createBlock(wrapper, max_width, max_height, number_blocks) {
     for (let index = 0; index < number_blocks; index++) {
         let new_pipe = document.createElement('div');
@@ -9,22 +16,43 @@ function createBlock(wrapper, max_width, max_height, number_blocks) {
             random_size_width = Math.floor(Math.random() * max_width);
             temp_rest = random_size_width % 50;
             random_size_width -= temp_rest;
-        } while (random_size_width < 200 || random_size_width > max_width - 200 || random_size_width > max_height - 200);
+        } while (random_size_width < 100 || random_size_width > max_width - 100 || random_size_width > max_height - 100);
 
         do {
             random_size_height = Math.floor(Math.random() * max_height);
             temp_rest = random_size_height % 50;
             random_size_height -= temp_rest;
-        } while (random_size_height < 200 || random_size_height > max_width - 200 || random_size_height > max_height - 200);
+        } while (random_size_height < 100 || random_size_height > max_width - 100 || random_size_height > max_height - 100);
 
         do {
-            random_top = Math.floor(Math.random() * max_height);
-            temp_rest = random_top % 40;
-            random_top -= temp_rest;
-
-            random_left = Math.floor(Math.random() * max_width);
-            temp_rest = random_left % 40;
-            random_left -= temp_rest;
+            if (findStart()){
+                if(findStart()[0] == 'os_y'){
+                    random_left = Math.floor(Math.random() * findStart()[2] + findStart()[1]);
+                    temp_rest = random_left % 40;
+                    random_left -= temp_rest - 80;
+    
+                    random_top = Math.floor(Math.random() * max_height);
+                    temp_rest = random_top % 40;
+                    random_top -= temp_rest - 80;
+                } else if (findStart()[0] == 'os_x'){
+                    random_top = Math.floor(Math.random() * findStart()[2] + findStart()[1]);
+                    temp_rest = random_top % 40;
+                    random_top -= temp_rest - 80;
+    
+                    random_left = Math.floor(Math.random() * max_width);
+                    temp_rest = random_left % 40;
+                    random_left -= temp_rest - 80;
+                } 
+            } else {
+                random_top = Math.floor(Math.random() * max_height);
+                temp_rest = random_top % 40;
+                random_top -= temp_rest - 80;
+    
+                random_left = Math.floor(Math.random() * max_width);
+                temp_rest = random_left % 40;
+                random_left -= temp_rest - 80;
+            }
+            
         } while (!isPositionFree(random_left, random_top) || ((random_top + random_size_height) > max_height)  || ((random_left + random_size_width) > max_width));
 
         if (Math.round(Math.random())) {
@@ -42,17 +70,20 @@ function createBlock(wrapper, max_width, max_height, number_blocks) {
 
         arr_pipes.push(new_pipe);
         wrapper.appendChild(new_pipe);
+
+        last_pipe.width = random_size_width;
+        last_pipe.height = random_size_height;
+        last_pipe.left = random_left;
+        last_pipe.top = random_top;
     }
 }
 
 function isPositionFree(position_left, position_top) {
     arr_pipes.forEach(element => {
         if (element.style.left == position_left + 'px') {
-            console.log("yes");
             return false;
         }
         if (element.style.top == position_top + 'px') {
-            console.log("yes 2");
             return false;
         }
     });
@@ -61,7 +92,11 @@ function isPositionFree(position_left, position_top) {
 }
 
 function findStart(){
-    // ToDo
+    if (last_pipe.width == 0){
+        return ['os_y',last_pipe.left, last_pipe.height];
+    } else if (last_pipe.height == 0){
+        return ['os_x',last_pipe.top, last_pipe.width];
+    }
 }
 
 function rotatePipe() {
@@ -76,7 +111,6 @@ function rotatePipe() {
         arr_pipes[index].style.transform = 'rotate(-90deg)';
         arr_pipes[index].id = 'pipe';
     }
-
 }
 
 setInterval(() => rotatePipe(), 6000);

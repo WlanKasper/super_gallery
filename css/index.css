@@ -79,7 +79,8 @@ section{
     margin-bottom: 100px;
 }
 
-#first_sec{
+#first_sec,
+#second_sec{
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -120,11 +121,11 @@ section{
 
 img {
     height: 400px;
+    z-index: 10;
 }
 
 #img_best_picture{
     position: absolute;
-    z-index: 10;
     right: 0;
     box-shadow: 8px 20px 25px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.6s ease-in-out;
@@ -143,11 +144,9 @@ img {
     padding-top: 100px;
     display: flex;
     flex-direction: column;
+
 }
 
-#wrapper_favorite{
-    position: relative;
-}
 .pipe {
     position: absolute;
     background: #4D4D4D;
@@ -157,4 +156,91 @@ img {
 
 .pipe:hover {
     transform: rotate(90deg);
+}
+
+#wrapper_favorite{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.wrapper_favorite_picture{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 450px;
+}
+
+.wrapper_favorite_picture > div{
+    position: absolute;
+    transition: all 0.6s ease-in-out;
+}
+
+.wrapper_favorite_picture > div:nth-child(3) > img{
+    min-height: 550px;
+}
+
+
+.wrapper_favorite_picture > div > img{
+    height: 100%;
+}
+
+.wrapper_glass{
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    transition: all 0.6s ease-in-out;
+    margin-top: -4px;
+
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.5px);
+    
+    border-radius: 0px 0px 25px 25px;
+}
+
+.wrapper_favorite_picture > div:hover .wrapper_glass {
+    height: 100px;
+}
+
+#favorite_1{
+    height: 360px;
+    box-shadow: -6px -8px 20px 10px rgba(0, 0, 0, 0.3);
+
+    z-index: 15;
+}
+
+#favorite_1:hover {
+    transform: translate(20%, 10%);
+    height: 420px;
+}
+
+#favorite_2{
+    height: 300px;
+    box-shadow: 6px -8px 20px 10px rgba(0, 0, 0, 0.3);
+    z-index: 15;
+}
+#favorite_2:hover {
+    transform: translate(-20%, 15%);
+    height: 380px;
+}
+
+#favorite_3{
+    height: 500px;
+    box-shadow: -5.89503px 8px 20px 10px rgba(0, 0, 0, 0.3);
+}
+
+#favorite_3:hover {
+    transform: translate(20%, -10%);
+    height: 600px;
+}
+
+#favorite_4{
+    height: 370px;
+    box-shadow: 6px 10px 20px 10px rgba(0, 0, 0, 0.3);
+    z-index: 5;
+}
+#favorite_4:hover {
+    transform: translate(-20%, -10%);
+    height: 430px;
 }
