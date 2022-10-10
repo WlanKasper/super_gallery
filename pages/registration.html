@@ -5,36 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/login_registration.css">
+    <link rel="stylesheet" href="../css/common.css">
     <title>Registration</title>
 </head>
 
 <body>
-    <header>
-        <div id="wrapper_header">
-            <div id="header_logo">
-            </div>
-        </div>
-    </header>
     <main>
-        <form action="../php/registration.php" onsubmit="return validation()" name="form_registration" method="post">
-            <input type="text" name="_firstname" id="_firstname" placeholder="firstname">
-            <input type="text" name="_lastname" id="_lastname" placeholder="lastname">
-            <input type="tel" name="_phone" id="_phone" placeholder="phone number">
+        <form action="./php/registration.php" onsubmit="return validation()" name="form_registration" method="post">
+            <input type="text" name="_login" id="_login" placeholder="LOGIN">
+            <input type="text" name="_psw" id="_psw" placeholder="PASSWORD">
+            <input type="text" name="_psw_conf" id="_psw_conf" placeholder="PASSWORD">
             <button type="submit">
-                <h4 class="color_dark">
-                    Sign up
+                <h4>
+                    SIGN UP
                 </h4>
             </button>
+            <h5 id="registration_link">
+                OR <a href="../pages/login.html">LOGIN</a> 
+            </h5>
         </form>
     </main>
-    <footer>
-        <h3 class="color_main">
-            or <a href="../index.html">Login</a> 
-        </h3>
-    </footer>
 </body>
 <script src="../js/validation_registration.js"></script>
+<script src="../js/pipe_generator.js"></script>
 
+<script>
+    createBlock(document.getElementsByTagName('main')[0], 1000, 1000, 20);
+</script>
 </html>

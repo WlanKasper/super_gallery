@@ -127,7 +127,7 @@ input {
     color: #101010;
     text-transform: uppercase;
 
-    background: none;
+    background: #E1E0D7;
 }
 
 input::placeholder {
@@ -140,5 +140,12 @@ input::placeholder {
 input:focus {
     outline: none !important;
     box-shadow: 0 0 0 none;
-    border: 3px solid #117F86;
+    border: 3px solid #ffffff;
+}
+
+.pipe {
+    position: absolute;
+    background: #4D4D4D;
+    z-index: -1;
+    transition: all 0.6s ease-in-out;
 }
