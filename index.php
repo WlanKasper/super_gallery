@@ -78,7 +78,15 @@
                     <div id="favorite_1">
                         <img src="./img/favorite_1.jpg">
                         <div class="wrapper_glass">
-
+                            <h4 class="glass_text">
+                                VRUBEL
+                            </h4>
+                            <h3 class="glass_text">
+                                ROSES IN SKY
+                            </h3>
+                            <h4 class="glass_text">
+                                1957
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -86,7 +94,15 @@
                     <div id="favorite_2">
                         <img src="./img/favorite_2.jpg">
                         <div class="wrapper_glass">
-
+                            <h4 class="glass_text">
+                                VRUBEL
+                            </h4>
+                            <h3 class="glass_text">
+                                ROSES IN SKY
+                            </h3>
+                            <h4 class="glass_text">
+                                1957
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -94,7 +110,12 @@
                     <div id="favorite_3">
                         <img src="./img/favorite_3.jpg">
                         <div class="wrapper_glass">
-
+                            <h3 class="glass_text">
+                                ROSES IN SKY
+                            </h3>
+                            <h4 class="glass_text">
+                                VRUBEL <br> 1957
+                            </h4>
                         </div>
                     </div>
                 </div>
@@ -102,10 +123,24 @@
                     <div id="favorite_4">
                         <img src="./img/favorite_4.jpg">
                         <div class="wrapper_glass">
-
+                            <h4 class="glass_text">
+                                VRUBEL
+                            </h4>
+                            <h3 class="glass_text">
+                                ROSES IN SKY
+                            </h3>
+                            <h4 class="glass_text">
+                                1957
+                            </h4>
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="third_sec">
+            <div id="wrapper_bott">
+                <h3>YOU HAVE TO BE <a href="pages/login.html">LOGINED</a>/<a href="pages/registration.html">REGISTERED</a> TO SEE MORE</h3>
             </div>
         </section>
     </main>
@@ -113,7 +148,7 @@
 <script src="js/pipe_generator.js"></script>
 
 <script>
-    createBlock(document.getElementById('wrapper_favorite'), 1200, 1000, 15);
+    createBlock(document.getElementById('wrapper_favorite'), 1200, 1400, 20);
 </script>
 
 </html>
