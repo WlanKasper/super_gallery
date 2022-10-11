@@ -26,7 +26,7 @@
         </div>
         <div id="wrapper_login_register">
             <h4>
-                <a href="pages/login.html">LOGIN</a> / <a href="pages/registration.html">REGISTER</a>
+                <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
             </h4>
         </div>
     </header>
@@ -140,7 +140,7 @@
 
         <section id="third_sec">
             <div id="wrapper_bott">
-                <h3>YOU HAVE TO BE <a href="pages/login.html">LOGINED</a>/<a href="pages/registration.html">REGISTERED</a> TO SEE MORE</h3>
+                <h3>YOU HAVE TO BE <a href="pages/login.php">LOGINED</a>/<a href="pages/registration.php">REGISTERED</a> TO SEE MORE</h3>
             </div>
         </section>
     </main>

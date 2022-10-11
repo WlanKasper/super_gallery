@@ -1,4 +1,3 @@
-<!-- https://www.andreyolegovich.ru/code/php/auth/ -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +24,7 @@
                 </h4>
             </button>
             <h5 id="registration_link">
-                OR <a href="../pages/registration.html">REGISTRATION</a> 
+                OR <a href="../pages/registration.php">REGISTRATION</a> 
             </h5>
         </form>
     </main>
@@ -34,6 +33,17 @@
 <script src="../js/pipe_generator.js"></script>
 
 <script type="text/javascript">
+	let form = document.getElementsByTagName('form')[0];
+	
+	<?php
+	   	if(isset($_GET['err'])) {
+		?>
+			setErrColor(form);
+		<?php
+	   	}
+    ?>
+
+	setInputListener(form)
     createBlock(document.getElementsByTagName('main')[0], 1000, 700, 20);
 </script>
 

@@ -16,9 +16,11 @@
 		}
 		
 		if ($isSuccess) {
+			// log user credencials and status
 			echo "welcome";
 		} else {
-			echo "fuck you";
+			// log user credencials and error
+			 header("Location: ../../pages/login.php?err=invalid_user");
 		}
 	}
 ?>
