@@ -42,11 +42,7 @@
 		$statement = $conn->prepare($sql_q);
 		$statement->bind_param($pattern, ...$arr_args);
 	    $statement->execute();
-	    $result = $statement->get_result();
-	    print_r($result);
-	    
-// 	    $resp = $result->fetch_assoc();
-		
+	   
 		mysqli_close($conn);
 		return $result;
 	}
