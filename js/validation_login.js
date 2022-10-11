@@ -1,4 +1,5 @@
 function validation() {
+/*
     var _firstname = document.form_login._firstname.value;
     var _lastname = document.form_login._lastname.value;
     var _phone = document.form_login._phone.value;
@@ -19,4 +20,5 @@ function validation() {
             return false;
         }
     }
-}  
+*/
+}

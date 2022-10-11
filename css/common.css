@@ -125,7 +125,7 @@ input {
     font-family: 'sovmod';
     font-size: 20px;
     color: #101010;
-    text-transform: uppercase;
+/*     text-transform: uppercase; */
 
     background: #E1E0D7;
 }
