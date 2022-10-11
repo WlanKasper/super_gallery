@@ -17,6 +17,7 @@
         <form action="../php/auth/authentication.php" onsubmit="return validation(this);" method="post">
             <input type="text" 		name="_login" 	id="_login" placeholder="LOGIN" 	autocomplete="username">
             <input type="password" 	name="_psw" 	id="_psw" 	placeholder="PASSWORD" 	autocomplete="current-password" value="">
+            
             <input type="hidden" 	name="md5_psw" 	value="">
             <button type="submit">
                 <h4>
@@ -24,7 +25,7 @@
                 </h4>
             </button>
             <h5 id="registration_link">
-                OR <a href="../pages/registration.php">REGISTRATION</a> 
+                OR <a href="registration.php">REGISTRATION</a> 
             </h5>
         </form>
     </main>
@@ -43,7 +44,7 @@
 	   	}
     ?>
 
-	setInputListener(form)
+	setInputListener(form);
     createBlock(document.getElementsByTagName('main')[0], 1000, 700, 20);
 </script>
 

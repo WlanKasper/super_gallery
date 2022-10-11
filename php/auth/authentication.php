@@ -7,7 +7,7 @@
 		$isSuccess 	= false;
 		
 		$sql_q = "SELECT * FROM `user_credential` WHERE `userName` = ?;";
-		$arr_resp = selectQuery($sql_q, [$username]);
+		$arr_resp = selectQuery($sql_q, 's', [$username]);
 		
 		for ($i = 0; $i < sizeof($arr_resp); $i++) {
 			if ($arr_resp[$i]['password'] == $psw_hash) {

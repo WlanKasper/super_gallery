@@ -17,14 +17,12 @@
 	    }
 	}
 	
-	function selectQuery($sql_q, $arr_args) {
+	function selectQuery($sql_q, $pattern, $arr_args) {
 		$conn = getConnection();
 		$arr_resp = array();
 		
 		$statement = $conn->prepare($sql_q);
-		for ($i = 0; $i < sizeof($arr_args); $i++) {
-			$statement->bind_param('s', $arr_args[$i]);
-		}
+		$statement->bind_param($pattern, ...$arr_args);
 	    $statement->execute();
 	    $result = $statement->get_result();
 	    
@@ -36,5 +34,20 @@
 		
 		mysqli_close($conn);
 		return $arr_resp;
+	}
+	
+	function insertQuery($sql_q, $pattern, $arr_args) {
+		$conn = getConnection();
+		
+		$statement = $conn->prepare($sql_q);
+		$statement->bind_param($pattern, ...$arr_args);
+	    $statement->execute();
+	    $result = $statement->get_result();
+	    print_r($result);
+	    
+// 	    $resp = $result->fetch_assoc();
+		
+		mysqli_close($conn);
+		return $result;
 	}
 ?> 
