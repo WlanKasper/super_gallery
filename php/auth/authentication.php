@@ -2,7 +2,7 @@
 	require('../db/connection.php');
 	
 	if (count($_POST) > 0) {
-		$username 	= $_POST['_login'];
+		$username 	= strtolower($_POST['_login']);
 		$psw_hash   = $_POST['md5_psw'];
 		$isSuccess 	= false;
 		
