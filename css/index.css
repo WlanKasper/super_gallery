@@ -17,7 +17,6 @@ header {
 
 
 #wrapper_menu {
-    width: 50px;
     display: flex;
     align-items: center;
     flex-direction: row;
