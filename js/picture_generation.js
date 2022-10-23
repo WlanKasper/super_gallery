@@ -19,7 +19,7 @@
 
 function initWrapper(wrapper_id, autor, name, desc, max_height, path) {
 	const wrapper 			= document.getElementById(wrapper_id);
-	const section_picture 	= document.createElement('div');
+	const sec_wrapper 		= document.createElement('div');
 	const wrapper_picture 	= document.createElement('div');
 	const picture 			= initPicture(max_height, path);
 	const wrapper_glass 	= document.createElement('div');
@@ -29,9 +29,8 @@ function initWrapper(wrapper_id, autor, name, desc, max_height, path) {
 	
 	// ----------------------------------------------
 	
-	section_picture.className 	 = 'wrapper_favorite_picture';
-	wrapper_picture.id 			 = autor + '_' + name;
-	wrapper_glass.className		 = 'wrapper_glass';
+	wrapper_picture.className 	= 'wrapper_picture';
+	wrapper_glass.className		= 'wrapper_glass';
 	wrapper_autor.className = wrapper_name.className = wrapper_desc.className = 'glass_text';
 	
 	// ----------------------------------------------
@@ -45,10 +44,10 @@ function initWrapper(wrapper_id, autor, name, desc, max_height, path) {
 	wrapper_glass.appendChild(wrapper_autor);
 	wrapper_glass.appendChild(wrapper_name);
 	wrapper_glass.appendChild(wrapper_desc);
-	wrapper_picture.appendChild(picture);
-	wrapper_picture.appendChild(wrapper_glass);
-	section_picture.appendChild(wrapper_picture);
-	wrapper.appendChild(section_picture);
+	sec_wrapper.appendChild(picture);
+	sec_wrapper.appendChild(wrapper_glass);
+	wrapper_picture.appendChild(sec_wrapper);
+	wrapper.appendChild(wrapper_picture);
 	
 	return picture;
 }

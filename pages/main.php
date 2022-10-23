@@ -1,7 +1,7 @@
 <?php
-	if (!isset($_COOKIE['access_token'])){
-		header("Location: ../../index.php");
-	}
+if (!isset($_COOKIE['access_token'])) {
+    header("Location: ../../index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>Super Gallery</title>
 </head>
 
@@ -30,7 +31,7 @@
             </div>
         </div>
         <div id="wrapper_login_register">
-	        <div id="wrapper_menu_std">
+            <div id="wrapper_menu_std">
                 <h4><a href="../php/auth/logout.php">LOGOUT</a></h4>
                 <h4><a href="./settings_account.php">ACCOUNT</a></h4>
             </div>
@@ -74,19 +75,25 @@
                 </div>
             </div>
         </section>
-        <section id="second_sec">
+        <section class="section_picture" id="second_sec">
             <div class="wrapper_title">
                 <h2>
                     MY FAVORITE
                 </h2>
             </div>
-            <div id="wrapper_favorite">
+            <div class="wrapper_pictures" id="wrapper_pictures_section_1">
+
+            <div class="wrapper_pipe" style="position: absolute;">
+
+            </div>
             </div>
         </section>
 
-        <section id="third_sec">
-            <div id="wrapper_bott">
-
+        <section class="section_picture">
+            <div class="wrapper_title">
+                <h2>
+                    MY FAVORITE 2
+                </h2>
             </div>
         </section>
     </main>
@@ -95,15 +102,15 @@
 <script src="../js/picture_generation.js"></script>
 
 <script>
-	let arr_pic = Array();
-	arr_pic.push(initWrapper('wrapper_favorite', 'VRUBEL', 'ROSES_IN_SKY', '1957', '360', '../img/favorite_1.jpg'));
-	arr_pic.push(initWrapper('wrapper_favorite', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
-	arr_pic.push(initWrapper('wrapper_favorite', 'VRUBEL', 'ROSES_IN_SKY', '1957', '500', '../img/favorite_3.jpg'));
-	arr_pic.push(initWrapper('wrapper_favorite', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
-	
-	arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_favorite'), element)));
-	
-    createBlock(document.getElementById('wrapper_favorite'), 1200, 1400, 20);
+    let arr_pic = Array();
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '360', '../img/favorite_1.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '500', '../img/favorite_3.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
+
+    arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_pictures_section_1'), element)));
+
+    createBlock(document.getElementsByClassName('wrapper_pipe')[0], 1200, 700, 20);
 </script>
 
 </html>

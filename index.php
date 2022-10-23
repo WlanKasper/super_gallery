@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>Super Gallery</title>
 </head>
 
@@ -24,9 +25,9 @@
             </div>
         </div>
         <div id="wrapper_login_register">
-	        <h4>
-		        <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
-		    </h4>
+            <h4>
+                <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
+            </h4>
         </div>
     </header>
     <main>
@@ -66,73 +67,16 @@
                 </div>
             </div>
         </section>
-        <section id="second_sec">
+        <section class="section_picture">
             <div class="wrapper_title">
                 <h2>
                     MY FAVORITE
                 </h2>
             </div>
-            <div id="wrapper_favorite">
-                <div class="wrapper_favorite_picture">
-                    <div id="favorite_1">
-                        <img src="./img/favorite_1.jpg">
-                        <div class="wrapper_glass">
-                            <h4 class="glass_text">
-                                VRUBEL
-                            </h4>
-                            <h3 class="glass_text">
-                                ROSES IN SKY
-                            </h3>
-                            <h4 class="glass_text">
-                                1957
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper_favorite_picture">
-                    <div id="favorite_2">
-                        <img src="./img/favorite_2.jpg">
-                        <div class="wrapper_glass">
-                            <h4 class="glass_text">
-                                VRUBEL
-                            </h4>
-                            <h3 class="glass_text">
-                                ROSES IN SKY
-                            </h3>
-                            <h4 class="glass_text">
-                                1957
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper_favorite_picture">
-                    <div id="favorite_3">
-                        <img src="./img/favorite_3.jpg">
-                        <div class="wrapper_glass">
-                            <h3 class="glass_text">
-                                ROSES IN SKY
-                            </h3>
-                            <h4 class="glass_text">
-                                VRUBEL <br> 1957
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrapper_favorite_picture">
-                    <div id="favorite_4">
-                        <img src="./img/favorite_4.jpg">
-                        <div class="wrapper_glass">
-                            <h4 class="glass_text">
-                                VRUBEL
-                            </h4>
-                            <h3 class="glass_text">
-                                ROSES IN SKY
-                            </h3>
-                            <h4 class="glass_text">
-                                1957
-                            </h4>
-                        </div>
-                    </div>
+            <div class="wrapper_pictures" id="wrapper_pictures_section_1">
+
+            <div class="wrapper_pipe" style="position: absolute;">
+
                 </div>
             </div>
         </section>
@@ -145,9 +89,18 @@
     </main>
 </body>
 <script src="js/pipe_generator.js"></script>
+<script src="../js/picture_generation.js"></script>
 
 <script>
-    createBlock(document.getElementById('wrapper_favorite'), 1200, 1400, 20);
+    let arr_pic = Array();
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '360', '../img/favorite_1.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '500', '../img/favorite_3.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
+
+    arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_pictures_section_1'), element)));
+
+    createBlock(document.getElementsByClassName('wrapper_pipe')[0], 1200, 1000, 20);
 </script>
 
 </html>

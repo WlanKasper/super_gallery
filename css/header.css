@@ -1,0 +1,94 @@
+header {
+    height: 80px;
+
+    margin: 0 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+#wrapper_login_register {
+	display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+
+#wrapper_menu {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#wrapper_menu_burger {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.burger_line {
+    width: 50px;
+    height: 3px;
+
+    background: #101010;
+
+    transition: all 0.4s ease-in-out;
+}
+
+#wrapper_menu_std {
+    margin-top: -150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+
+    transition: all 0.4s ease-in-out;
+}
+
+#account_icon {
+	height: 50px;
+	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+}
+
+#wrapper_login_register:hover #account_icon{
+	transform: scale(1.2);
+	width: unset;
+}
+
+#wrapper_menu:hover {
+    width: unset;
+}
+
+#wrapper_login_register:hover #wrapper_menu_std,
+#wrapper_menu:hover #wrapper_menu_std {
+    margin-top: 0;
+}
+
+
+#wrapper_menu:hover .burger_line:first-child {
+    transform: rotate(270deg);
+    width: 20px;
+    height: 2px;
+}
+
+#wrapper_menu:hover .burger_line:last-child {
+    transform: rotate(-270deg);
+    width: 20px;
+    height: 2px;
+}
+
+#wrapper_menu:hover .burger_line:nth-child(2) {
+    width: 40px;
+    height: 2px;
+}
+
+.selected {
+    text-decoration: underline;
+}
