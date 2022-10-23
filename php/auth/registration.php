@@ -13,8 +13,8 @@
 			$resp = insertQuery($sql_q, 'ssss', [$username, $psw_hash, $username, 'default']);
 		
 			// log user credencials and status
-			echo "welcome";	
-			echo($resp);
+			
+			require('authentication.php');
 		} else {
 			// log user credencials and error
 			header("Location: ../../pages/registration.php?err=invalid_psw");

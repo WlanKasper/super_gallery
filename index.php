@@ -20,14 +20,13 @@
             </div>
             <div id="wrapper_menu_std">
                 <h4><a href="" class="selected">HOME</a></h4>
-                <h4><a href="">GALLERY</a></h4>
                 <h4><a href="">MY COLLECTION</a> </h4>
             </div>
         </div>
         <div id="wrapper_login_register">
-            <h4>
-                <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
-            </h4>
+	        <h4>
+		        <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
+		    </h4>
         </div>
     </header>
     <main>

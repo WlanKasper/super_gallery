@@ -7,7 +7,7 @@ let last_pipe = {
     top: null
 }
 
-function createBlock(wrapper, max_width, max_height, number_blocks) {
+async function createBlock(wrapper, max_width, max_height, number_blocks) {
     for (let index = 0; index < number_blocks; index++) {
         let new_pipe = document.createElement('div');
         let random_size_width = 0, random_size_height = 0, random_left, random_top, temp_rest;
@@ -99,18 +99,20 @@ function findStart(){
     }
 }
 
-function rotatePipe() {
+async function rotatePipe() {
     let index = Math.floor(Math.random() * arr_pipes.length);
-    if (arr_pipes[index].id == 'pipe') {
-        arr_pipes[index].style.transform = 'rotate(0deg)';
-        arr_pipes[index].id = '';
-    } else if (Math.round(Math.random())) {
-        arr_pipes[index].style.transform = 'rotate(90deg)';
-        arr_pipes[index].id = 'pipe';
-    } else {
-        arr_pipes[index].style.transform = 'rotate(-90deg)';
-        arr_pipes[index].id = 'pipe';
+    if (arr_pipes[index]) {
+		if (arr_pipes[index].id == 'pipe') {
+	        arr_pipes[index].style.transform = 'rotate(0deg)';
+	        arr_pipes[index].id = '';
+	    } else if (Math.round(Math.random())) {
+	        arr_pipes[index].style.transform = 'rotate(90deg)';
+	        arr_pipes[index].id = 'pipe';
+	    } else {
+	        arr_pipes[index].style.transform = 'rotate(-90deg)';
+	        arr_pipes[index].id = 'pipe';
+	    } 
     }
 }
 
-setInterval(() => rotatePipe(), 6000);
+setInterval(() => {rotatePipe();}, 6000);
