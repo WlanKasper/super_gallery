@@ -95,7 +95,7 @@
     let arr_pic = Array();
     arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '360', '../img/favorite_1.jpg'));
     arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '500', '../img/favorite_3.jpg'));
+    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '600', '../img/favorite_3.jpg'));
     arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
 
     arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_pictures_section_1'), element)));

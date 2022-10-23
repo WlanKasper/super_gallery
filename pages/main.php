@@ -35,7 +35,11 @@ if (!isset($_COOKIE['access_token'])) {
                 <h4><a href="../php/auth/logout.php">LOGOUT</a></h4>
                 <h4><a href="./settings_account.php">ACCOUNT</a></h4>
             </div>
-            <img id="account_icon" src="../img/icon/icon_account.svg" alt="account">
+            <div id="wrapper_account_burger">
+                <div class="burger_line_acc"></div>
+                <div class="burger_line_acc"></div>
+                <div class="burger_line_acc"></div>
+            </div>
         </div>
     </header>
     <main>

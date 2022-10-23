@@ -23,27 +23,31 @@ function initWrapper(wrapper_id, autor, name, desc, max_height, path) {
 	const wrapper_picture 	= document.createElement('div');
 	const picture 			= initPicture(max_height, path);
 	const wrapper_glass 	= document.createElement('div');
-	const wrapper_autor 	= document.createElement('h4');
+	const glass_text		= document.createElement('div');
 	const wrapper_name 		= document.createElement('h3');
 	const wrapper_desc 		= document.createElement('h4');
+	const btn 				= document.createElement('button'); 
+	const btn_inner 		= document.createElement('h4');
 	
 	// ----------------------------------------------
 	
 	wrapper_picture.className 	= 'wrapper_picture';
 	wrapper_glass.className		= 'wrapper_glass';
-	wrapper_autor.className = wrapper_name.className = wrapper_desc.className = 'glass_text';
+	wrapper_name.className = wrapper_desc.className = 'glass_text';
+	glass_text.className = 'wrapper_glass_text'
 	
 	// ----------------------------------------------
 	
-	wrapper_autor.innerHTML = autor;
-	wrapper_name.innerHTML 	= name;
-	wrapper_desc.innerHTML 	= desc;
+	wrapper_name.innerHTML = name;
+	wrapper_desc.innerHTML 	= autor + '<br>' + desc;
+	btn_inner.innerHTML = 'BUY';
 	
 	// ----------------------------------------------
-	
-	wrapper_glass.appendChild(wrapper_autor);
-	wrapper_glass.appendChild(wrapper_name);
-	wrapper_glass.appendChild(wrapper_desc);
+	btn.appendChild(btn_inner);
+	glass_text.appendChild(wrapper_name);
+	glass_text.appendChild(wrapper_desc);
+	wrapper_glass.appendChild(glass_text);
+	wrapper_glass.appendChild(btn);
 	sec_wrapper.appendChild(picture);
 	sec_wrapper.appendChild(wrapper_glass);
 	wrapper_picture.appendChild(sec_wrapper);
@@ -56,8 +60,11 @@ function initPicture(max_height, path) {
 	const picture = document.createElement('img');
 	
 	picture.src = path;
+	if (max_height > 500) {
+		picture.style.marginTop = '100px';
+	}
 	picture.style.height = max_height + 'px';
-	
+
 	return picture;
 }
 
