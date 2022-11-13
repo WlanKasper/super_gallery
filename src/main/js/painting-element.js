@@ -31,7 +31,9 @@ class PaintingElement {
     }
 
     initEventListener() {
-        console.log(this.elements);
+        this.elements.paintingButton.addEventListener('click', (event) => {
+            console.log('click');
+        });
     }
 
     initPaintingShadow() {
