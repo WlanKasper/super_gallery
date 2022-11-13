@@ -1,0 +1,7 @@
+.wrapper_painting_to_buy{
+    display: flex;
+    align-items: row;
+    justify-content: space-evenly;
+    gap: 40px;
+    margin-top: 100px;
+}

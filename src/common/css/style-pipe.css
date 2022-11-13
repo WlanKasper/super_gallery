@@ -1,0 +1,6 @@
+.pipe {
+    position: absolute;
+    background: #4D4D4D;
+    z-index: -1;
+    transition: all 0.6s ease-in-out;
+}

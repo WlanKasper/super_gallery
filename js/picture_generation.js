@@ -1,22 +1,3 @@
-/*
-<div class="wrapper_favorite_picture">
-    <div id="favorite_4">
-        <img src="../img/favorite_4.jpg">
-        <div class="wrapper_glass">
-            <h4 class="glass_text">
-                VRUBEL
-            </h4>
-            <h3 class="glass_text">
-                ROSES IN SKY
-            </h3>
-            <h4 class="glass_text">
-                1957
-            </h4>
-        </div>
-    </div>
-</div>
-*/
-
 function initWrapper(wrapper_id, autor, name, desc, max_height, path) {
 	const wrapper 			= document.getElementById(wrapper_id);
 	const sec_wrapper 		= document.createElement('div');

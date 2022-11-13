@@ -1,0 +1,50 @@
+@font-face {
+    font-family: "sovmod";
+    src: url("../font/SovMod.ttf");
+
+    display: flex;
+    align-items: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+    font-family: 'sovmod';
+    color: #101010;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 26px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+h5 {
+    font-size: 16px;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f1f1f1;
+}
+
+a:-webkit-any-link {
+    color: none;
+}

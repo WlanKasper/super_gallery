@@ -34,7 +34,7 @@ section {
     max-width: 40%;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
     gap: 30px;
 }
@@ -119,7 +119,7 @@ img {
 
 .wrapper_picture > div:hover .wrapper_glass {
     overflow: unset;
-    height: 100px;
+    height: 140px;
 }
 
 .wrapper_picture>div:hover .wrapper_glass> div>.glass_text {
@@ -130,6 +130,7 @@ img {
 .wrapper_glass > button {
     opacity: 0;
     transition: all 0.8s ease-in-out;
+    margin-right: 10px;
 }
 
 .wrapper_picture>div:hover .wrapper_glass > button {
@@ -145,6 +146,7 @@ img {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 10px;
 }
 
 img {

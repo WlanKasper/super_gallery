@@ -1,10 +1,12 @@
 <?php
 if (!isset($_COOKIE['access_token'])) {
-    header("Location: ../../index.php");
+    header("Location: ./login.php");
 }
 require_once('../php/db/connection.php');
-?>
 
+$id_painting = $_POST['id_painting'];
+$tag_painting = $_POST['tag_painting'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +17,7 @@ require_once('../php/db/connection.php');
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/painting.css">
     <title>Super Gallery</title>
 </head>
 
@@ -44,13 +47,11 @@ require_once('../php/db/connection.php');
         </div>
     </header>
     <main>
-        <section id="first_sec">
-            <div class="wrapper_title">
-                <h2>
-                    THE BEST OF THE BEST
-                </h2>
-            </div>
-            <div id="wrapper_best_picture">
+        <section>
+            <div class="wrapper_painting_to_buy">
+                <div class="painting_to_buy">
+                    <img src="../img/img_top.jpg" alt="утро в лесу">
+                </div>
                 <div class="wrapper_info">
                     <div class="wrapper_info_main">
                         <h3>
@@ -66,81 +67,24 @@ require_once('../php/db/connection.php');
                             SURPRISE HE HONOURED INDULGED. UNPACKED ENDEAVOR SIX STEEPEST HAD HUSBANDS HER. PAINTED NO
                             OR AFFIXED IT SO CIVILLY. EXPOSED NEITHER PRESSED SO COTTAGE AS PROCEED AT OFFICES. NAY THEY
                             GONE SIR GAME FOUR. FAVOURABLE PIANOFORTE OH MOTIONLESS EXCELLENCE OF ASTONISHED WE.
+                            <?=$id_painting;?>
+                            <?=$tag_painting;?>
                         </h5>
-                        <form  method="post">
-                            <button formaction="./painting.php">
-                                <h4>
-                                    BUY
-                                </h4>
-                            </button>
-                            <input type="hidden" name="id_painting" value="23">
-                            <input type="hidden" name="tag_painting" value="the_best">
-                        </form>
+                        <button formaction="../php/check_authentiication.php">
+                            <h4>
+                                BUY
+                            </h4>
+                        </button>
                     </div>
                 </div>
-                <div class="wrapper_picture">
-                    <img src="../img/img_top.jpg" alt="утро в лесу" srcset="" id="img_best_picture">
-
-                </div>
             </div>
         </section>
-        <section class="section_picture" id="second_sec">
-            <div class="wrapper_title">
-                <h2>
-                    MY FAVORITE
-                </h2>
-            </div>
-            <div class="wrapper_pictures" id="wrapper_pictures_section_1">
-
-                <div class="wrapper_pipe" style="position: absolute;">
-
-                </div>
-            </div>
-        </section>
-
-        <!-- <section class="section_picture">
-            <div class="wrapper_title">
-                <h2>
-
-                </h2>
-            </div>
-        </section> -->
     </main>
 </body>
 <script src="../js/pipe_generator.js"></script>
 <script src="../js/picture_generation.js"></script>
 
 <script>
-    let arr_pic = Array();
-
-    <?php
-    require('../php/db/paintings/painting_manager.php');
-
-    $publicPaintings = getPublicPaintings();
-
-    foreach ($publicPaintings as $painting) {
-        ?>
-        arr_pic.push(
-            initWrapper(
-                'wrapper_pictures_section_1',
-                `<?= strtoupper($painting['name_painter'])?>`,
-                `<?= strtoupper($painting['name_painting'])?>`,
-                `<?= $painting['year_painting']?>`,
-                '360',
-                '../img/' + `<?= $painting['year_painting']?> + '.jpg'`)
-            );
-        <?php
-    }
-    ?>
-
-    
-   
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '600', '../img/favorite_3.jpg'));
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
-
-    arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_pictures_section_1'), element)));
-
     createBlock(document.getElementsByClassName('wrapper_pipe')[0], 1200, 700, 20);
 </script>
 
