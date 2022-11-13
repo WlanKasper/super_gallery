@@ -1,10 +1,3 @@
-<?php
-if (!isset($_COOKIE['access_token'])) {
-    header("Location: ../../index.php");
-}
-require_once('../php/db/connection.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,37 +5,20 @@ require_once('../php/db/connection.php');
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/common.css">
-    <link rel="stylesheet" href="../css/index.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../common/css/style-common.css">
+    <link rel="stylesheet" href="../common/css/style-font.css">
+    <link rel="stylesheet" href="../common/css/style-form.css">
+    <link rel="stylesheet" href="../common/css/style-pipe.css">
+    <link rel="stylesheet" href="./css/style-main.css">
     <title>Super Gallery</title>
 </head>
 
 <body>
-    <header>
-        <div id="wrapper_menu">
-            <div id="wrapper_menu_burger">
-                <div class="burger_line"></div>
-                <div class="burger_line"></div>
-                <div class="burger_line"></div>
-            </div>
-            <div id="wrapper_menu_std">
-                <h4><a href="./main.php" class="selected">HOME</a></h4>
-                <h4><a href="./private_collection.php">MY COLLECTION</a> </h4>
-            </div>
-        </div>
-        <div id="wrapper_login_register">
-            <div id="wrapper_menu_std">
-                <h4><a href="../php/auth/logout.php">LOGOUT</a></h4>
-                <h4><a href="./settings_account.php">ACCOUNT</a></h4>
-            </div>
-            <div id="wrapper_account_burger">
-                <div class="burger_line_acc"></div>
-                <div class="burger_line_acc"></div>
-                <div class="burger_line_acc"></div>
-            </div>
-        </div>
-    </header>
+    <?php
+    $page = 'null';
+    $active = 'class="active-menu"';
+    require_once('../common/modules/header.php');
+    ?>
     <main>
         <section id="first_sec">
             <div class="wrapper_title">
@@ -67,7 +43,7 @@ require_once('../php/db/connection.php');
                             OR AFFIXED IT SO CIVILLY. EXPOSED NEITHER PRESSED SO COTTAGE AS PROCEED AT OFFICES. NAY THEY
                             GONE SIR GAME FOUR. FAVOURABLE PIANOFORTE OH MOTIONLESS EXCELLENCE OF ASTONISHED WE.
                         </h5>
-                        <form  method="post">
+                        <form method="post">
                             <button formaction="./painting.php">
                                 <h4>
                                     BUY
@@ -107,41 +83,5 @@ require_once('../php/db/connection.php');
         </section> -->
     </main>
 </body>
-<script src="../js/pipe_generator.js"></script>
-<script src="../js/picture_generation.js"></script>
-
-<script>
-    let arr_pic = Array();
-
-    <?php
-    require('../php/db/paintings/painting_manager.php');
-
-    $publicPaintings = getPublicPaintings();
-
-    foreach ($publicPaintings as $painting) {
-        ?>
-        arr_pic.push(
-            initWrapper(
-                'wrapper_pictures_section_1',
-                `<?= strtoupper($painting['name_painter'])?>`,
-                `<?= strtoupper($painting['name_painting'])?>`,
-                `<?= $painting['year_painting']?>`,
-                '360',
-                '../img/' + `<?= $painting['year_painting']?> + '.jpg'`)
-            );
-        <?php
-    }
-    ?>
-
-    
-   
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '300', '../img/favorite_2.jpg'));
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '600', '../img/favorite_3.jpg'));
-    arr_pic.push(initWrapper('wrapper_pictures_section_1', 'VRUBEL', 'ROSES_IN_SKY', '1957', '370', '../img/favorite_4.jpg'));
-
-    arr_pic.forEach(element => initShadow(element, detectQuadrant(document.getElementById('wrapper_pictures_section_1'), element)));
-
-    createBlock(document.getElementsByClassName('wrapper_pipe')[0], 1200, 700, 20);
-</script>
-
+<script src="./js/view-main.js" type="module"> </script>
 </html>
