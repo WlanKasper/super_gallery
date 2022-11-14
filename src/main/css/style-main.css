@@ -112,23 +112,23 @@ img {
     border-radius: 0px 0px 25px 25px;
 }
 
-.wrapper-painting > div:hover .wrapper-glass {
+.wrapper-painting>div:hover .wrapper-glass {
     overflow: unset;
-    height: 140px;
+    height: 160px;
 }
 
-.wrapper-painting>div:hover .wrapper-glass> div>.glass-text {
+.wrapper-painting>div:hover .wrapper-glass>div>.glass-text {
     color: white;
     opacity: 1;
 }
 
-.wrapper-glass > button {
+.wrapper-glass>button {
     opacity: 0;
     transition: all 0.8s ease-in-out;
     margin-right: 10px;
 }
 
-.wrapper-painting>div:hover .wrapper-glass > button {
+.wrapper-painting>div:hover .wrapper-glass>button {
     opacity: 1;
 }
 
@@ -137,11 +137,12 @@ img {
     transition: all 0.6s ease-in-out;
 }
 
-.wrapper-glass-text{
+.wrapper-glass-text {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
     padding: 10px;
+    max-width: 75%;
 }
 
 img {
@@ -161,4 +162,42 @@ img {
     backdrop-filter: blur(7.5px);
 
     border-radius: 5px;
+}
+
+.glass-text-name {
+    font-size: 21px;
+}
+
+.glass-text-desc {
+    font-size: 15px;
+}
+
+.glass-button-text{
+    font-size: 18px;
+}
+
+footer {
+    height: 100px;
+}
+
+.glass-button {
+    height: 70%;
+}
+
+.wrapper_pipe{
+    position: absolute;
+    z-index: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    flex-direction: row;
+}
+
+.section-title > button {
+    width: auto;
+    padding: 0 15px;
 }

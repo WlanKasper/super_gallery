@@ -15,7 +15,7 @@
         if (TokenManager::isAuthenticated()) {
         ?>
         <div id="wrapper_menu_std">
-            <h4><a href="../php/auth/logout.php">LOGOUT</a></h4>
+            <h4><a href="../common/php/logout.php">LOGOUT</a></h4>
             <h4><a href="./settings_account.php">ACCOUNT</a></h4>
         </div>
         <div id="wrapper_account_burger">

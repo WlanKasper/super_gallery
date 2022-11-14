@@ -13,17 +13,10 @@
     <title>Super Gallery</title>
 </head>
 
-<body>
-    <?php
-    require_once('../common/php/token-manager.php');
-    require_once('../common/modules/header.php');
-    ?>
-    <main>
+<body> <?php require_once('../common/php/token-manager.php'); require_once('../common/modules/header.php'); ?> <main>
         <section>
             <div class="section-title">
-                <h2>
-                    THE BEST OF THE BEST
-                </h2>
+                <h2> THE BEST OF THE BEST </h2>
             </div>
             <div class="wrapper-heading-painting">
                 <div class="wrapper-heading-info">
@@ -37,24 +30,21 @@
                             <h4 class="heading-button-inner"> </h4>
                         </button>
                     </div>
-                </div>
-                <img class="heading-painting" src="">
+                </div> <img class="heading-painting" src="">
             </div>
         </section>
         <section>
             <div class="section-title">
-                <h2>
-                    MY FAVORITE
-                </h2>
+                <h2>MY PUBLIC COLLECTION</h2>
             </div>
-            <div class="wrapper_pictures" id="wrapper_pictures_section_1">
+            <div class="section-title" id="painting-section-title">
+            </div>
+            <div id="wrapper-paintings">
 
-                <div class="wrapper_pipe" style="position: absolute;">
-
-                </div>
             </div>
         </section>
     </main>
+    <footer> </footer>
 </body>
 <script src="./js/view-main.js" type="module"> </script>
 

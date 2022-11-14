@@ -45,7 +45,12 @@ class ValidationRegistration {
                         .then(response => {
                             console.log(response);
                             if (response.status == '200') {
-                                location.href = '../main/main.php';
+                                UtilsFetch.postData('../common/php/authentication.php', data)
+                                .then(response => {
+                                    if (response.status == '200') {
+                                        location.href = '../main/main.php';
+                                    }
+                                });
                             } else {
                                 this.elements.regPassword.style.border = "2px solid red";
                                 this.elements.regPasswordConf.style.border = "2px solid red";
