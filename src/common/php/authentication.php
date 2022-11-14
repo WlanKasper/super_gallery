@@ -1,6 +1,6 @@
 <?php
 require_once('connection-db.php');
-// require_once('token-manager.php');
+require_once('token-manager.php');
 
 $connMySQL = new ConnectionMySQL();
 $pdo = $connMySQL->getConnection();
@@ -22,7 +22,7 @@ if ($user != null) {
         'status' => 200,
     );
 
-    // TokenManager::authenticate($user['id']);
+    TokenManager::authenticate($user['id']);
 } else {
     $result = array(
         'data' => null,

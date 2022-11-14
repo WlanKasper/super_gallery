@@ -15,8 +15,7 @@
 
 <body>
     <?php
-    $page = 'null';
-    $active = 'class="active-menu"';
+    require_once('../common/php/token-manager.php');
     require_once('../common/modules/header.php');
     ?>
     <main>

@@ -12,7 +12,7 @@
     </div>
     <div id="wrapper_login_register">
         <?php
-        if (false) {
+        if (TokenManager::isAuthenticated()) {
         ?>
         <div id="wrapper_menu_std">
             <h4><a href="../php/auth/logout.php">LOGOUT</a></h4>
@@ -27,7 +27,7 @@
         } else {
         ?>
         <h4>
-            <a href="pages/login.php">LOGIN</a> / <a href="pages/registration.php">REGISTER</a>
+            <a href="../login/login.php">LOGIN</a> / <a href="../registration/registration.php">REGISTER</a>
         </h4>
         <?php
         }

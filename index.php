@@ -1,7 +1,7 @@
 <?php
-// require_once('./src/common/php/token-manager.php');
+require_once('./src/common/php/token-manager.php');
 
-// $tokenManager = new TokenManager();
+$tokenManager = new TokenManager();
 header('Location: ./src/main/main.php');
 
 die();
