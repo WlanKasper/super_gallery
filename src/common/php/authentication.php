@@ -17,12 +17,20 @@ $user = $stmt->fetch();
 $result = null;
 
 if ($user != null) {
-    $result = array(
-        'data' => $user,
-        'status' => 200,
-    );
+    if ($user['user'] == 'toSet') {
+        $result = array(
+            'data' => $user,
+            'status' => 420,
+        );
+    } else {
+        $result = array(
+            'data' => $user,
+            'status' => 200,
+        );
 
-    TokenManager::authenticate($user['id']);
+        TokenManager::authenticate($user['id']);
+    }
+    
 } else {
     $result = array(
         'data' => null,

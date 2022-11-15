@@ -43,12 +43,13 @@ class ValidationRegistration {
 
                     UtilsFetch.postData('./php/registration-script.php', data)
                         .then(response => {
-                            console.log(response);
                             if (response.status == '200') {
                                 UtilsFetch.postData('../common/php/authentication.php', data)
                                 .then(response => {
                                     if (response.status == '200') {
                                         location.href = '../main/main.php';
+                                    } else if (response.status == '420') {
+                                        location.href = '../account/account.php?code=420';
                                     }
                                 });
                             } else {
