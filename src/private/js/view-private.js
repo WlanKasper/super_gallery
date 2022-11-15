@@ -1,9 +1,7 @@
 import UtilsFetch from "../../common/js/utils-fetch.js";
-import HeadingPainting from "./heading-painting.js";
 import PaintingElement from "./painting-element.js";
 import PipeComponent from "../../common/js/pipe-component.js";
 
-const parentElementHeading = document.querySelector('.wrapper-heading-painting');
 const wrapperElementPaintings = document.querySelector('#wrapper-paintings');
 const parentElementPaintingTitle = document.querySelector('#painting-section-title');
 
@@ -11,15 +9,7 @@ let parentElementPainting = null;
 let paintingsList = null;
 let counterPaintingParent = 0;
 
-
-const headingPainting = new HeadingPainting(parentElementHeading);
-headingPainting.init();
-headingPainting.setHeadingAuthor('MIKHAIL VRUBEL');
-headingPainting.setHeadingName('PEARL OYSTER (1904)');
-headingPainting.setHeadingDesc(`VRUBEL È UN ARTISTA RUSSO CHE HA DIPINTO IN QUASI TUTTE LE TECNICHE E GENERI, CHE HA CERCATO INSTANCABILMENTE E CON ENERGIA RIBOLLENTE LA PROPRIA, PRIVILEGIANDO TRAME MITICHE E LETTERARIE. MIKHAIL ALEKSANDROVICH VRUBEL (TRASLITTERATO ANCHE COME MIKHAIL) È STATO UN ARTISTA, DISEGNATORE E SCULTORE NATO A OMSK, UNA CITTÀ DELL'IMPERO RUSSO CHE ATTUALMENTE APPARTIENE AL DISTRETTO FEDERALE SIBERIANO. LA SUA FIGURA È STRETTAMENTE ASSOCIATA AL SIMBOLISMO RUSSO, ED È ANCHE CONSIDERATO UN PIONIERE DELL'ART NOUVEAU.`);
-headingPainting.setHeadingPainting(400, '../../images/favorite_2.jpg');
-
-initPaintings({countryId: 0, private: 'n'});
+initPaintings({countryId: 0, private: 's'});
 
 UtilsFetch.postData('./php/main-get-filters-script.php', {})
     .then(response => {
@@ -58,7 +48,7 @@ function initFilter(name, countryId) {
         destroyPaintings();
         const data = {
             countryId: countryId,
-            private: 'n',
+            private: 's',
         };
         return initPaintings(data);
     });

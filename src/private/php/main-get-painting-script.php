@@ -19,7 +19,7 @@ if ($countryId != '0') {
     INNER JOIN tautori 
     INNER JOIN tnazionalita 
     ON topere.idAutore = tautori.id AND tautori.idNazionalita = tnazionalita.id AND tautori.idNazionalita = $countryId
-    WHERE topere.privata = 'n'
+    WHERE topere.privata = 's'
     ORDER BY tnazionalita.nazionalita;");
 } else {
     $stmt = $pdo->query("SELECT topere.id, topere.titolo, tautori.autore, topere.descrizione, topere.prenotato, topere.path 
@@ -27,7 +27,7 @@ if ($countryId != '0') {
     INNER JOIN tautori 
     INNER JOIN tnazionalita 
     ON topere.idAutore = tautori.id AND tautori.idNazionalita = tnazionalita.id
-    WHERE topere.privata = 'n'
+    WHERE topere.privata = 's'
     ORDER BY tnazionalita.nazionalita;");
 }
 

@@ -26,14 +26,12 @@
                     </div>
                     <div class="wrapper-heading-desc">
                         <h5 class="heading-desc"> </h5>
-                        <button class="heading-button">
-                            <h4 class="heading-button-inner"> </h4>
-                        </button>
+
                     </div>
                 </div> <img class="heading-painting" src="">
             </div>
         </section>
-        <section>
+        <section style="margin-top: 200px;">
             <div class="section-title">
                 <h2>MY PUBLIC COLLECTION</h2>
             </div>

@@ -22,9 +22,7 @@ class HeadingPainting {
     }
 
     initEventListener() {
-        this.elements.headingButton.addEventListener('click', (event) => {
-            console.log('click');
-        });
+  
     }
 
     setHeadingAuthor(author) {
